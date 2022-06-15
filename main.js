@@ -2,10 +2,7 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
-//const colorStates = {
-  //"blue" : "",
-//  "": "blue"
-//};
+
 
 // Your JavaScript code goes here!
 const takeOut = document.getElementById('modal')
