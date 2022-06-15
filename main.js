@@ -2,7 +2,41 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
+//const colorStates = {
+  //"blue" : "",
+//  "": "blue"
+//};
+
 // Your JavaScript code goes here!
+const takeOut = document.getElementById('modal')
+const errorMessage = document.getElementById('modal-message')
+const tapHeart = document.querySelectorAll('.like-glyph')
+
+tapHeart.forEach(element => {
+element.addEventListener('click', () => {
+mimicServerCall()
+.then(() => {
+  //(element.innerHTML === EMPTY_HEART)?FULL_HEART : EMPTY_HEART
+  if (element.textContent === EMPTY_HEART) {
+     element.textContent = FULL_HEART
+     element.className = 'activated-heart'
+  } else {
+    element.textContent = EMPTY_HEART
+    elememt.className = 'activated-heart'
+  }
+})
+.catch(error => {
+  takeOut.classList.remove('hidden')
+  errorMessage.textContent = error
+  setTimeout(() => {
+    takeOut.classList.add('hidden')
+    errorMessage.textContent = ''
+  }, 2000)
+})
+})
+})
+
+
 
 
 
